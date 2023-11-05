@@ -37,13 +37,26 @@ def multiplicación(multiplicando, multiplicador):
     """
     return multiplicando * multiplicador
 
-def división(a, b):
-    return a / b
+def división(dividendo, divisor):
+    return dividendo / divisor
+
+def cociente(dividendo, divisor):
+    """
+    Esta función calcula el cociente entero de una división.
+
+    Args:
+    dividendo (int): El número que será dividido.
+    divisor (int): El número por el cual se divide.
+
+    Returns:
+    int: El cociente entero de dividendo entre divisor.
+    """
+    return dividendo // divisor
 
 def main():
     resultado = 0
     print("Ingrese el número de la opcion de la operacion basica que desea realizar: ")
-    operacion = int(input("1 = suma, 2 = resta, 3 = multiplicación, 4 = división: "))
+    operacion = int(input("1 = suma, 2 = resta, 3 = multiplicación, 4 = división, 5 = cociente: "))
 
     
     if (operacion < 1 or operacion > 4):
@@ -62,12 +75,19 @@ def main():
             multiplicador = int(input("multiplicador: "))
             resultado = multiplicación(multiplicando, multiplicador)
         elif (operacion == 4):
-            a = int(input("a: "))
-            b = int(input("b: "))
-            if ( b == 0 ):
+            dividendo = int(input("dividendo: "))
+            divisor = int(input("divisor: "))
+            if ( divisor == 0 ):
                 print("Error en la division: No se puede dividir por cero")
                 
-            resultado = división(a, b)
+            resultado = división(divisor, divisor)
+        elif (operacion == 5):
+            dividendo = int(input("dividendo: "))
+            divisor = int(input("divisor: "))
+            if ( divisor == 0 ):
+                print("Error en la division: No se puede dividir por cero")
+                
+            resultado = cociente(dividendo, divisor)
 
         print(f"El resultado de la operacion es: {resultado}")
 

@@ -25,10 +25,22 @@ def funcion_logaritmo_base_x(base, argumento):
     """
     return math.log(argumento, base)
 
+def funcion_logaritmo_natural(argumento):
+    """
+    Calcula el logaritmo natural (en base e) de un número.
+
+    Args:
+    argumento (float): El número del cual se calculará el logaritmo natural.
+
+    Returns:
+    float: El valor del logaritmo natural del número.
+    """
+    return math.log(argumento)
+
 def main():
     resultado = 0
     print("Ingrese el número de la opcion de la operacion avanzada que desea realizar: ")
-    operacion = int(input("1 = logaritmo en base 10, 2 = logaritmo en base x: "))
+    operacion = int(input("1 = logaritmo en base 10, 2 = logaritmo en base x, 3 = logaritmo natural: "))
     
     if (operacion < 1 or operacion > 2):
         return print("Opción no válida")
@@ -43,6 +55,8 @@ def main():
             elif (operacion == 2):
                 base = float(input("Ingrese la base del logaritmo: "))
                 resultado = funcion_logaritmo_base_x(base, argumento)
+            elif (operacion == 3):
+                resultado = funcion_logaritmo_natural(argumento)
 
         return print(f"El resultado de la operación es: {resultado}")
 

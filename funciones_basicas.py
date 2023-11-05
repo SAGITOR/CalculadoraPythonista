@@ -24,13 +24,26 @@ def resta(minuendo, sustraendo):
     """
     return minuendo - sustraendo
 
+def multiplicación(multiplicando, multiplicador):
+    """
+    Esta función realiza una multiplicación de dos números.
+
+    Args:
+    multiplicando (int): El primer número a multiplicar.
+    multiplicador (int): El segundo número a multiplicar.
+
+    Returns:
+    int: El resultado de la multiplicación de multiplicando y multiplicador.
+    """
+    return multiplicando * multiplicador
+
 def main():
     resultado = 0
     print("Ingrese el número de la opcion de la operacion basica que desea realizar: ")
-    operacion = int(input("1 = suma, 2 = resta: "))
+    operacion = int(input("1 = suma, 2 = resta, 3 = multiplicación: "))
 
     
-    if (operacion < 1 or operacion > 2):
+    if (operacion < 1 or operacion > 3):
         return print("Opción no válida")
     else:
         if (operacion == 1): 
@@ -41,6 +54,10 @@ def main():
             minuendo = float(input("minuendo: "))
             sustraendo = float(input("sustraendo: "))
             resultado = resta(minuendo, sustraendo)
+        elif (operacion == 3):
+            multiplicando = int(input("multiplicando: "))
+            multiplicador = int(input("multiplicador: "))
+            resultado = multiplicación(multiplicando, multiplicador)
 
         print(f"El resultado de la operacion es: {resultado}")
 

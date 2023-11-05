@@ -63,13 +63,26 @@ def cociente(dividendo, divisor):
     """
     return dividendo // divisor
 
+def resto(dividendo, divisor):
+    """
+    Esta función calcula el resto de una división entera.
+
+    Args:
+    dividendo (int): El número que será dividido.
+    divisor (int): El número por el cual se divide.
+
+    Returns:
+    int: El resto de dividendo entre divisor.
+    """
+    return dividendo % divisor
+
 def main():
     resultado = 0
     print("Ingrese el número de la opcion de la operacion basica que desea realizar: ")
-    operacion = int(input("1 = suma, 2 = resta, 3 = multiplicación, 4 = división, 5 = cociente: "))
+    operacion = int(input("1 = suma, 2 = resta, 3 = multiplicación, 4 = división, 5 = cociente, 6 = resto: "))
 
     
-    if (operacion < 1 or operacion > 4):
+    if (operacion < 1 or operacion > 6):
         return print("Opción no válida")
     else:
         if (operacion == 1): 
@@ -98,6 +111,13 @@ def main():
                 print("Error en la division: No se puede dividir por cero")
                 
             resultado = cociente(dividendo, divisor)
+        elif (operacion == 6):
+            dividendo = int(input("dividendo: "))
+            divisor = int(input("divisor: "))
+            if ( divisor == 0 ):
+                print("Error en la division: No se puede dividir por cero")
+                
+            resultado = resto(dividendo, divisor)
 
         print(f"El resultado de la operacion es: {resultado}")
 

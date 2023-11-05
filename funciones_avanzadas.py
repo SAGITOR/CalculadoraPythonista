@@ -37,12 +37,25 @@ def funcion_logaritmo_natural(argumento):
     """
     return math.log(argumento)
 
+def funcion_seno(angulo_grados):
+    """
+    Calcula el seno de un ángulo en grados.
+
+    Args:
+    angulo_grados (float): El ángulo en grados.
+
+    Returns:
+    float: El valor del seno del ángulo.
+    """
+    angulo_radianes = math.radians(angulo_grados)
+    return math.sin(angulo_radianes)
+
 def main():
     resultado = 0
     print("Ingrese el número de la opcion de la operacion avanzada que desea realizar: ")
-    operacion = int(input("1 = logaritmo en base 10, 2 = logaritmo en base x, 3 = logaritmo natural: "))
+    operacion = int(input("1 = logaritmo en base 10, 2 = logaritmo en base x, 3 = logaritmo natural, 4 = función seno: "))
     
-    if (operacion < 1 or operacion > 2):
+    if (operacion < 1 or operacion > 4):
         return print("Opción no válida")
     else:
         if ( operacion in [1, 2, 3] ):
@@ -57,6 +70,11 @@ def main():
                 resultado = funcion_logaritmo_base_x(base, argumento)
             elif (operacion == 3):
                 resultado = funcion_logaritmo_natural(argumento)
+        elif ( operacion in [4, 5, 6] ):
+            angulo_grados = float(input("Ingrese el ángulo en grados: "))
+            
+            if (operacion == 4):
+                resultado = funcion_seno(angulo_grados)
 
         return print(f"El resultado de la operación es: {resultado}")
 

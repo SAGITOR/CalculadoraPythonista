@@ -81,7 +81,7 @@ def main():
     print("Ingrese el número de la opcion de la operacion avanzada que desea realizar: ")
     operacion = int(input("1 = logaritmo en base 10, 2 = logaritmo en base x, 3 = logaritmo natural, 4 = función seno, 5 = función coseno, 6 = función tangente: "))
     
-    if (operacion < 1 or operacion > 4):
+    if (operacion < 1 or operacion > 6):
         return print("Opción no válida")
     else:
         if ( operacion in [1, 2, 3] ):

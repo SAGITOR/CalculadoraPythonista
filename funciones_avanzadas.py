@@ -27,7 +27,7 @@ def main():
                 return print("Error en el calculo del logaritmo natural: El argumento debe ser mayor a 0")
             elif (operacion == 1):
                 resultado = funcion_logaritmo_base_10(argumento)
-                
-        print(f"El resultado de la operación es: {resultado}")
+
+        return print(f"El resultado de la operación es: {resultado}")
 
 main()

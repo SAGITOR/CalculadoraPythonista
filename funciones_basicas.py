@@ -114,7 +114,7 @@ def main():
             dividendo = int(input("dividendo: "))
             divisor = int(input("divisor: "))
             if ( divisor == 0 ):
-                print("Error en la division: No se puede dividir por cero")
+                return print("Error en la division: No se puede dividir por cero")
 
             elif (operacion == 4):
                 resultado = división(dividendo, divisor)

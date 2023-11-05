@@ -33,7 +33,7 @@ def main():
     if (operacion < 1 or operacion > 2):
         return print("Opción no válida")
     else:
-        if (operacion in [1, 2, 3]):
+        if ( operacion in [1, 2, 3] ):
             argumento = float(input("Ingrese el argumento: "))
             
             if ( argumento == 0 ):

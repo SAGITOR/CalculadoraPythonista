@@ -63,10 +63,23 @@ def funcion_coseno(angulo_grados):
     angulo_radianes = math.radians(angulo_grados)
     return math.cos(angulo_radianes)
 
+def funcion_tangente(angulo_grados):
+    """
+    Calcula la tangente de un ángulo en grados.
+
+    Args:
+    angulo_grados (float): El ángulo en grados.
+
+    Returns:
+    float: El valor de la tangente del ángulo.
+    """
+    angulo_radianes = math.radians(angulo_grados)
+    return math.tan(angulo_radianes)
+
 def main():
     resultado = 0
     print("Ingrese el número de la opcion de la operacion avanzada que desea realizar: ")
-    operacion = int(input("1 = logaritmo en base 10, 2 = logaritmo en base x, 3 = logaritmo natural, 4 = función seno, 5 = función coseno: "))
+    operacion = int(input("1 = logaritmo en base 10, 2 = logaritmo en base x, 3 = logaritmo natural, 4 = función seno, 5 = función coseno, 6 = función tangente: "))
     
     if (operacion < 1 or operacion > 4):
         return print("Opción no válida")
@@ -90,6 +103,8 @@ def main():
                 resultado = funcion_seno(angulo_grados)
             elif (operacion == 5):
                 resultado = funcion_coseno(angulo_grados)
+            elif (operacion == 6):
+                resultado = funcion_tangente(angulo_grados)
 
         return print(f"El resultado de la operación es: {resultado}")
 

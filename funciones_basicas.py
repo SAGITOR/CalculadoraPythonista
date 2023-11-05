@@ -37,13 +37,16 @@ def multiplicación(multiplicando, multiplicador):
     """
     return multiplicando * multiplicador
 
+def división(a, b):
+    return a / b
+
 def main():
     resultado = 0
     print("Ingrese el número de la opcion de la operacion basica que desea realizar: ")
-    operacion = int(input("1 = suma, 2 = resta, 3 = multiplicación: "))
+    operacion = int(input("1 = suma, 2 = resta, 3 = multiplicación, 4 = división: "))
 
     
-    if (operacion < 1 or operacion > 3):
+    if (operacion < 1 or operacion > 4):
         return print("Opción no válida")
     else:
         if (operacion == 1): 
@@ -58,6 +61,13 @@ def main():
             multiplicando = int(input("multiplicando: "))
             multiplicador = int(input("multiplicador: "))
             resultado = multiplicación(multiplicando, multiplicador)
+        elif (operacion == 4):
+            a = int(input("a: "))
+            b = int(input("b: "))
+            if ( b == 0 ):
+                print("Error en la division: No se puede dividir por cero")
+                
+            resultado = división(a, b)
 
         print(f"El resultado de la operacion es: {resultado}")
 

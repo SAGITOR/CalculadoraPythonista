@@ -76,10 +76,23 @@ def resto(dividendo, divisor):
     """
     return dividendo % divisor
 
+def raíces(radicando, indice):
+    """
+    Esta función calcula la raíz de un número.
+
+    Args:
+    radicando (int): El número del cual se calculará la raíz.
+    indice (int): El índice de la raíz (por ejemplo, 2 para la raíz cuadrada).
+
+    Returns:
+    float: El resultado de la raíz.
+    """
+    return radicando ** (1/indice)
+
 def main():
     resultado = 0
     print("Ingrese el número de la opcion de la operacion basica que desea realizar: ")
-    operacion = int(input("1 = suma, 2 = resta, 3 = multiplicación, 4 = división, 5 = cociente, 6 = resto: "))
+    operacion = int(input("1 = suma, 2 = resta, 3 = multiplicación, 4 = división, 5 = cociente, 6 = resto, 7 = raiz: "))
 
     
     if (operacion < 1 or operacion > 6):
@@ -101,23 +114,30 @@ def main():
             dividendo = int(input("dividendo: "))
             divisor = int(input("divisor: "))
             if ( divisor == 0 ):
-                print("Error en la division: No se puede dividir por cero")
+                return print("Error en la division: No se puede dividir por cero")
                 
             resultado = división(divisor, divisor)
         elif (operacion == 5):
             dividendo = int(input("dividendo: "))
             divisor = int(input("divisor: "))
             if ( divisor == 0 ):
-                print("Error en la division: No se puede dividir por cero")
+                return print("Error en la division: No se puede dividir por cero")
                 
             resultado = cociente(dividendo, divisor)
         elif (operacion == 6):
             dividendo = int(input("dividendo: "))
             divisor = int(input("divisor: "))
             if ( divisor == 0 ):
-                print("Error en la division: No se puede dividir por cero")
+                return print("Error en la division: No se puede dividir por cero")
                 
             resultado = resto(dividendo, divisor)
+        elif (operacion == 7): 
+            radicando = int(input("radicando: "))
+            indice = int(input("indice: "))
+            if ( indice == 0 ):
+                return print("Error en el calculo de la raiz: El indice no puede ser 0")
+            
+            resultado = raíces(radicando, indice)
 
         print(f"El resultado de la operacion es: {resultado}")
 

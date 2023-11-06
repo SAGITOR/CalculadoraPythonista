@@ -102,6 +102,10 @@ def potencias(base, exponente):
     """
     return base ** exponente
 
+def suma_potencias(sumando, base, exponente):
+ 
+    return sumando + base ** exponente
+
 def main():
     resultado = 0
     print("Ingrese el número de la opcion de la operacion basica que desea realizar: ")
